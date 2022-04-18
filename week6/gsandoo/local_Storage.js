@@ -51,8 +51,6 @@ localStorage.setItem("travel",JSON.stringify(travel));
 //이럴 떄 JSON.parse 사용
 
 // JSON.parse = 문자열을 객체 형식으로 다시 풀어준다. 
-
-
 // const data = JSON.parse(localStorage.getItem("travel"));
 
 // console.log(data.destination);
