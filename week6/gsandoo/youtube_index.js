@@ -44,30 +44,30 @@ $commentForm.addEventListener('submit',handleSubmit)
 
 
 //local storage 값 추가
-const comments =[];
+const comments =[]; //빈배열 추가
 function saveItem(){
-    localStorage.setItem("comments",JSON.stringify(comments));
+    localStorage.setItem("comments",JSON.stringify(comments)); //문자열 형태로 코멘트를 저장
 };
 
-function displayHistory(){
-    const savedComments = JSON.parse(localStorage.getItem("comments"));
+function displayHistory(){ //새로고침해도 댓글 남아있게 하기
+    const savedComments = JSON.parse(localStorage.getItem("comments")); //코멘트를 그대로 가지고오기
 
     savedComments.map(comment=>{
-        const newCommentItem = commentItemTemplate(comment);
-        comments.push(comment);
-        $commentList.insertAdjacentHTML("afterbegin",newCommentItem);
+        const newCommentItem = commentItemTemplate(comment); //템플릿에 각 댓글들 넣어주기
+        comments.push(comment); // comments 배열에 값 추가
+        $commentList.insertAdjacentHTML("afterbegin",newCommentItem); //댓글 목록 맨 위에 업로드
     })
 }
 displayHistory();
 
 //제출버튼
 function handleSubmit(e){
-    e.preventDefault();
-    const newComment= $commentInput.value;
-    if (!newComment) {return};
-    const newCommentItem =commentItemTemplate(newComment);
+    e.preventDefault(); //새로고침 안되게
+    const newComment= $commentInput.value; //인풋값을 선언.
+    if (!newComment) {return}; // 인풋값이 없을 시 그냥 끝냄.
+    const newCommentItem =commentItemTemplate(newComment); 
     $commentList.insertAdjacentHTML("afterbegin",newCommentItem);
-    $commentInput.value = " ";
+    $commentInput.value = " "; //제출버튼 누르고 다시 빈 값으로 만듬
     comments.push(newComment);
     // console.log(comments)
     saveItem();
