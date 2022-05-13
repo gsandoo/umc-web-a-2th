@@ -16,6 +16,7 @@
 
 
 // Request 를 할 때 구성:
+
 //<header> : 데이터 형식 , 최종 목적지 
 //<body> : 추가 혹은 수정 데이터 (post 나 put 만 해당) 
 //<startline> : url 주소와 method

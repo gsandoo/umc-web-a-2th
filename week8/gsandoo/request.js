@@ -1,13 +1,13 @@
 // Request 할 때 :
 
 
-//fetch , axios
+//fetch , axios 사용
 
 
 
 //1.fetch : (fetchurl , options(바디가 있는 경우)) >> GET의 경우에 이렇게 사용
 
-const result = [];
+// const result = [];
 
 
 //promise 이용
