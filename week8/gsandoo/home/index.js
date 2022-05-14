@@ -1,4 +1,4 @@
-const $contentBox = document.querySelector('#content-box');
+const $contentBox = document.querySelector('#contentBox');
 
 const API_KEY = "AIzaSyA7-LHliOao-kHPOc0Kp3f8_6hr8QY4H4U";
 
@@ -17,7 +17,7 @@ function videoCardTemplate(data){
         <div class="videoItemContainer">
         <a href=${"https://www.youtube.com/watch?v=${data.id}"}>
             <div class="videoThumbnailContainer">
-                <img class="thumbnailImg" src=${data.snippet.thumnails?.high.url} />
+                <img class="thumbnailImg" src=${data.snippet.thumbnails.high.url} />
             </div>
         </a>
         <div class="videoDetailsContainer">
@@ -32,15 +32,15 @@ function videoCardTemplate(data){
                     <div class="videoMetaData">
                         <p class="metaText">Chilli Music</p>
                         <p class="extraMeta">
-                            <span class="metaText viewCount">${data.statistics.viewcount}</span>
-                            <span class="metaText">${data.snippet.publishedAt}</span>
+                            <span class="metaText viewCount">${Number(data.statistics.viewCount) > 1000 ? (Number(data.statistics.viewCount)/1000).toFixed(0) + 'K views' :Number(data.statistics.viewCount)}</span>
+                            <span class="metaText">${luxon.DateTime.fromISO(data.snippet.publishedAt
+                                ).toRelative()}</span>
                         </p>
                     </div>
                 </div>
             </a>
         </div>
-    </div>  
-    `
+    </div>`;
+    $contentBox.insertAdjacentHTML('beforeend',videoItem);
 }
 
-$contentBox.insertAdjacentHTML('beforeend',videoItems);
