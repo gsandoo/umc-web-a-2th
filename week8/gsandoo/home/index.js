@@ -1,11 +1,13 @@
 const $contentBox = document.querySelector('#contentBox');
-
+// dom 선택
 const API_KEY = "AIzaSyA7-LHliOao-kHPOc0Kp3f8_6hr8QY4H4U";
+// youtube 에서 app 키 받기
+
 
 function fetchVideo(){
     fetch(
         `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%20%2Cstatistics&chart=mostPopular&maxResults=100&regionCode=KR&key=${API_KEY}`
-        ).then(response => response.json())
+        ).then(response => response.json()) // 
         .then(result=> result.items.map(video => videoCardTemplate(video)))
         .catch(error => console.log(error))
 }
