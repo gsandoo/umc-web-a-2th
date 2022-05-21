@@ -54,8 +54,8 @@ const users = [
   app.get('/users/:userId', (req, res) => { // 동적주소는 : 를 붙혀준다
     
     
-    // res.json(users) //  '/users' 로 들어가면 users 배열을 respond 하기 위해 
-    // console.log(req.params.userId); // /users/이곳에 들어간 값을 출력
+    // res.json(users) //  '/users' 로 들어가면 users 배열을 response 하기 위해 
+    // console.log(req.params.userId); // /users/(이곳에 들어간 값을 출력)
     
     
     const user = users.find(user=> user.id === parseInt(req.params.userId));
