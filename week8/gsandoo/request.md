@@ -75,6 +75,6 @@ const dataFetch = async()=>{
     return result;
 
 }
-const dataResult = dataFetch(); 
+<pre>const dataResult = dataFetch(); 
 <STORNG>data 를 변수에 저장하는 식으로 많이 쓰임.</STORNG>
-console.log(dataResult)
+console.log(dataResult)</pre>
