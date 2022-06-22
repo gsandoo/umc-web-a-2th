@@ -65,16 +65,18 @@
 
 # 2. axios 를 활용한 변수에 데이터 저장하기
 
-const dataFetch = async()=>{
-    const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-    <STRONG>
-        response
-         fetch 가 될 동안 await 을 안해주면 그대로 promise 값이 나옴 .(fetch 의 기본값이 promise)
-    </STRONG>
-   const result = await response.data
-    return result;
-
-}
+<pre>
+    const dataFetch = async()=>{
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+        <STRONG>
+            response
+             fetch 가 될 동안 await 을 안해주면 그대로 promise 값이 나옴 .(fetch 의 기본값이 promise)
+        </STRONG>
+    
+        return response;
+    
+    }
+</pre>
 <pre>const dataResult = dataFetch(); 
 <STORNG>data 를 변수에 저장하는 식으로 많이 쓰임.</STORNG>
 console.log(dataResult)</pre>
